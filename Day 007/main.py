@@ -20,7 +20,6 @@ def initial_setup():
     for c in random_word:
         player_guess.append("-")
     print("".join(player_guess))
-    print(random_word)
     return random_word
     
 def make_guess(word):
