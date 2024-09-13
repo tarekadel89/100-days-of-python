@@ -34,6 +34,17 @@ def decode_string(str, shift):
     return decoded_string """
 
 def encode_decode(mode, str, shift):
+    """
+    This function performs a Caesar cipher encoding or decoding on a given string.
+
+    Parameters:
+    mode (str): The mode of operation. It should be either 'encode' or 'decode'.
+    str (str): The input string to be encoded or decoded.
+    shift (int): The number of positions to shift each letter in the alphabet.
+
+    Returns:
+    str: The encoded or decoded string.
+    """
     global alphabet
     output_str = ""
     for char in str:
@@ -46,6 +57,7 @@ def encode_decode(mode, str, shift):
             else:
                 output_str += alphabet[(index - shift) % 26].upper() if char.isupper() else alphabet[(index - shift) % 26]
     return output_str
+
 
 mode_input = input("Enter 'encode' or 'decode': ").lower()
 while mode_input not in ["encode", "decode"]:
