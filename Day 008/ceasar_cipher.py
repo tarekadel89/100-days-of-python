@@ -1,36 +1,34 @@
-alphabet = ["a", "b", "c", "d", "e", "f", "g", 
+ALPHABET = ["a", "b", "c", "d", "e", "f", "g", 
             "h", "i", "j", "k", "l", "m", "n", 
             "o", "p", "q", "r", "s", "t", "u", 
             "v", "w", "x", "y", "z"]
 
 """ def encode_string(str, shift):
-    global alphabet
     encoded_string = ""
     for char in str:
-        if char.lower() not in alphabet:
+        if char.lower() not in ALPHABET:
            encoded_string += char
         else:
-            index = alphabet.index(char.lower())
+            index = ALPHABET.index(char.lower())
             encoded_index = (index + shift) % 26
             if char.isupper():
-                encoded_string += alphabet[encoded_index].upper()
+                encoded_string += ALPHABET[encoded_index].upper()
             else:
-                encoded_string += alphabet[encoded_index]
+                encoded_string += ALPHABET[encoded_index]
     return encoded_string
 
 def decode_string(str, shift):
-    global alphabet
     decoded_string = ""
     for char in str:
-        if char.lower() not in alphabet:
+        if char.lower() not in ALPHABET:
             decoded_string += char
         else:
-            index = alphabet.index(char.lower())
+            index = ALPHABET.index(char.lower())
             decoded_index = (index - shift) % 26
             if char.isupper():
-                decoded_string += alphabet[decoded_index].upper()
+                decoded_string += ALPHABET[decoded_index].upper()
             else:
-                decoded_string += alphabet[decoded_index]
+                decoded_string += ALPHABET[decoded_index]
     return decoded_string """
 
 def encode_decode(mode, str, shift):
@@ -40,22 +38,21 @@ def encode_decode(mode, str, shift):
     Parameters:
     mode (str): The mode of operation. It should be either 'encode' or 'decode'.
     str (str): The input string to be encoded or decoded.
-    shift (int): The number of positions to shift each letter in the alphabet.
+    shift (int): The number of positions to shift each letter in the ALPHABET.
 
     Returns:
     str: The encoded or decoded string.
     """
-    global alphabet
     output_str = ""
     for char in str:
-        if char.lower() not in alphabet:
+        if char.lower() not in ALPHABET:
             output_str += char
         else:
-            index = alphabet.index(char.lower())
+            index = ALPHABET.index(char.lower())
             if mode == "encode":
-                output_str += alphabet[(index + shift) % 26].upper() if char.isupper() else alphabet[(index + shift) % 26]
+                output_str += ALPHABET[(index + shift) % 26].upper() if char.isupper() else ALPHABET[(index + shift) % 26]
             else:
-                output_str += alphabet[(index - shift) % 26].upper() if char.isupper() else alphabet[(index - shift) % 26]
+                output_str += ALPHABET[(index - shift) % 26].upper() if char.isupper() else ALPHABET[(index - shift) % 26]
     return output_str
 
 
