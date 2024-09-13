@@ -20,3 +20,49 @@ fruits = [
     "watermelon",
     "xylophone"
 ]
+
+countries = [
+    "China",
+    "India",
+    "United States",
+    "Indonesia",
+    "Pakistan",
+    "Brazil",
+    "Nigeria",
+    "Bangladesh",
+    "Russia",
+    "Mexico",
+    "Japan",
+    "Ethiopia",
+    "Philippines",
+    "Vietnam",
+    "Egypt",
+    "Germany",
+    "Iran",
+    "Turkey",
+    "Democratic Republic of the Congo",
+    "Thailand"
+]
+
+animals = [
+    "Elephant",
+    "Giraffe",
+    "Lion",
+    "Zebra",
+    "Monkey",
+    "Hippopotamus",
+    "Tiger",
+    "Panda",
+    "Gorilla",
+    "Rhinoceros",
+    "Crocodile",
+    "Kangaroo",
+    "Leopard",
+    "Hyena",
+    "Wolf",
+    "Elephant seal",
+    "Hedgehog",
+    "Chimpanzee",
+    "Meerkat",
+    "Capybara"
+]

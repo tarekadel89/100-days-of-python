@@ -1,13 +1,13 @@
 import random
 from hangman_stages import hangman_stages
-from hangman_words import fruits
+from hangman_words import fruits, countries, animals
 
 num_guesses = 0
 player_guess = []
 guessed_letters = []
 
 
-def initial_setup():
+def initial_setup(mode):
     """
     This function initializes the game by setting up the necessary variables and choosing a random word from the list of fruits.
 
@@ -24,7 +24,12 @@ def initial_setup():
     num_guesses = 0
     player_guess = []
     guessed_letters = []
-    random_word = random.choice(fruits)
+    if mode == "f":
+        random_word = random.choice(fruits)
+    elif mode == "c":
+        random_word = random.choice(countries)
+    else:
+        random_word = random.choice(animals)
     print(hangman_stages[0])
     for c in random_word:
         player_guess.append("-")
@@ -56,11 +61,11 @@ def make_guess(word):
         print("You've already guessed that letter successfully!")
     elif guess in guessed_letters:
         print("You've already guessed that letter and it's not in the word")
-    elif guess in word:
+    elif guess.lower() in word or guess.upper() in word:
         print(f"Correct! Attempts left {6-num_guesses}")
         for index in range (len(word)):
-            if guess == word[index]:
-                player_guess[index] = guess
+            if guess.lower() == word[index].lower():
+                player_guess[index] = word[index]
     else:
         num_guesses += 1
         guessed_letters.append(guess)
@@ -80,7 +85,11 @@ def game_logic():
     Returns:
     None
     """
-    computer_word = initial_setup()  # Initialize the game by choosing a random word and setting up the necessary variables.
+    game_mode = input("Do you want to play with fruits (f), countries (c), or animals (a)? ").lower()
+    while game_mode not in ['f', 'c', 'a']:
+        print("Invalid input. Please enter f, c, or a")
+        game_mode = input("Do you want to play with fruits (f), countries (c), or animals (a)? ").lower()
+    computer_word = initial_setup(game_mode)  # Initialize the game by choosing a random word and setting up the necessary variables.
     while num_guesses < 6 and "-" in player_guess:  # Continue the game until the player has made 6 incorrect guesses or has guessed the word correctly.
         make_guess(computer_word)  # Handle the player's guess.
     if num_guesses == 6:  # If the player has made 6 incorrect guesses, they have lost the game.
