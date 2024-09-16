@@ -1,4 +1,5 @@
 import random
+import os
 
 deck = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
@@ -132,8 +133,11 @@ def blackjack():
         computer_hand = computer_turn(computer_hand, player_score)
         compare_hands(player_hand, computer_hand)
 
-        
-
+if os.name == 'nt':  # Check if the system is Windows
+    os.system('cls')  # Use cls command on Windows
+else:
+    os.system('clear')  # Use clear command on other systems        
+print("Welcome to the Blackjack game!")
 keep_playing = 'y'
 while keep_playing == 'y':
     blackjack()
@@ -141,3 +145,7 @@ while keep_playing == 'y':
     while keep_playing not in ['y', 'n']:
         print("Invalid choice. Please, type 'y' or 'n'")
         keep_playing = input("Do you want to play another round [y/n]?: ").lower()
+    if os.name == 'nt':  # Check if the system is Windows
+        os.system('cls')  # Use cls command on Windows
+    else:
+        os.system('clear')  # Use clear command on other systems
