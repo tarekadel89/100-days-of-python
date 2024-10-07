@@ -42,9 +42,9 @@ def main():
             my_food.hide_food()
         screen.update()
         time.sleep(my_snake.speed)
-    my_score.game_over()
+    sleep =  my_score.game_over()
     screen.update()
-    time.sleep(1)
+    time.sleep(sleep)
     my_score.hide_score()
     screen.update()
 
