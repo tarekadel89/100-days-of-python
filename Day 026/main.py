@@ -11,12 +11,18 @@ another_word = "y"
 
 while another_word == "y":
     user_input = input("Enter a word to generate the nato equivalents: ").upper()
-    while not validate_input(user_input):
-        print("Invalid input. Please enter only letters.")
-        user_input = input("Enter a word to generate the nato equivalents: ").upper()
+    #while not validate_input(user_input):
+    #    print("Invalid input. Please enter only letters.")
+    #    user_input = input("Enter a word to generate the nato equivalents: ").upper()
 
-    nato_equivalents = [nato_dict.get(letter, "Invalid letter") for letter in user_input]
-    print(nato_equivalents)
-    another_word = input("Do you want to try another word? (y/n): ").lower()
+    #nato_equivalents = [nato_dict.get(letter, "Invalid letter") for letter in user_input]
+    try:
+        nato_equivalents = [nato_dict[letter] for letter in user_input]
+    except KeyError:
+        print ("Only letters from the alphabet are allowed!")
+    else:    
+        print(nato_equivalents)
+    finally:
+        another_word = input("Do you want to try another word? (y/n): ").lower()
     
 print("Ok, goodbye!")  
