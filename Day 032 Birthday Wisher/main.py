@@ -74,7 +74,7 @@ def read_letter_template(template_path, name):
  
 def send_email(letter, recipient):
     username = "tarekadel89@gmail.com"
-    password = "vknlqsvuaspzqznc"
+    password = "PASSWORD"
 
     try:
         # Create the email message

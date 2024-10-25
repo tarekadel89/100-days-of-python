@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
     
 def send_quote(quoteText):
     username = "tarekadel89@gmail.com"
-    password = "vknlqsvuaspzqznc"
+    password = "PASSWORD"
 
     try:
         # Create the email message
