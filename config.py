@@ -30,7 +30,9 @@ class Configuration:
             'auth_token',
             'twilio_from',
             'my_phone',
-            'APPID'
+            'APPID',
+            'ALPHA_ADVANTAGE_API_KEY',
+            'NEWS_API_KEY'
         ]
         
         # Load configuration
