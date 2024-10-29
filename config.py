@@ -32,7 +32,10 @@ class Configuration:
             'my_phone',
             'APPID',
             'ALPHA_ADVANTAGE_API_KEY',
-            'NEWS_API_KEY'
+            'NEWS_API_KEY',
+            'PIXELA_USERNAME',
+            'TOKEN',
+            'GRAPH_ID'
         ]
         
         # Load configuration
