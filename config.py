@@ -35,7 +35,15 @@ class Configuration:
             'NEWS_API_KEY',
             'PIXELA_USERNAME',
             'TOKEN',
-            'GRAPH_ID'
+            'GRAPH_ID',
+            'NutritionIX_API_Key',
+            'NutritionIX_APP_ID',
+            'SHEETY_API_URL',
+            'SHEETY_API_TOKEN',
+            'SHEETY_FLIGHT_SHEET_ID',
+            'SHEETY_FLIGHT_API_TOKEN',
+            'AMADEUS_CLIENT_ID',
+            'AMADEUS_CLIENT_SECRET'
         ]
         
         # Load configuration
